@@ -1,7 +1,8 @@
 const fs = require("fs");
 
-const name = fs.readFileSync("./texts/name.txt", "utf-8");
-console.log({ name });
+const before = "You see me before";
+fs.readFile("./texts/name.txt", "utf-8", (err, data) => {
+  console.log({ name: data });
+});
 
-const textOut = `Thic is what you know about me: ${name}.`;
-fs.writeFileSync("./texts/what-you-know.txt", textOut);
+console.log(before);
