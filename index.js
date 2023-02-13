@@ -1,8 +1,9 @@
-const fs = require("fs");
+const http = require("http");
 
-const before = "You see me before";
-fs.readFile("./texts/name.txt", "utf-8", (err, data) => {
-  console.log({ name: data });
+const server = http.createServer((req, res) => {
+  res.end("Hello from the server");
 });
 
-console.log(before);
+server.listen(8000, "127.0.0.1", () => {
+  console.log("Listening to requests on port 8000");
+});
