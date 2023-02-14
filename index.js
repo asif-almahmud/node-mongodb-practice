@@ -2,9 +2,14 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 
+const templateHome = fs.readFileSync(
+  `${__dirname}/templates/home.html`,
+  "utf-8"
+);
+
 const server = http.createServer((req, res) => {
   const pathname = req.url;
-  if (pathname === "/api" || pathname === "/api/home") {
+  if (pathname === "/api") {
     fs.readFile(`${__dirname}/data/data.json`, "utf-8", (err, data) => {
       const productData = JSON.parse(data);
       console.log({ productData });
@@ -13,6 +18,11 @@ const server = http.createServer((req, res) => {
       });
       res.end(data);
     });
+  } else if (pathname === "/api/home") {
+    res.writeHead(200, {
+      "Content-type": "text/html",
+    });
+    res.end(templateHome);
   } else if (pathname === "api/product") {
     res.end("This is the product page");
   } else {

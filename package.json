@@ -1,0 +1,22 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asif-almahmud/node-mongodb-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asif-almahmud/node-mongodb-practice/issues"
+  },
+  "homepage": "https://github.com/asif-almahmud/node-mongodb-practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
